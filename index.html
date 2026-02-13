@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servio — Restaurant Ordering Management System</title>
+    <meta name="description"
+        content="Servio is a modern, real-time restaurant ordering and management system. Streamline operations from table to kitchen to checkout." />
+    <link rel="icon" type="image/png" href="../frontend/public/servio.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="#" class="nav-brand">
+                <img src="../frontend/public/servio.png" alt="Servio" draggable="false" class="nav-logo" />
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#features">Features</a>
+                <a href="#roles">Roles</a>
+                <a href="#tech">Tech Stack</a>
+                <a href="#workflow">Workflow</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Animated Background Canvas (full page) -->
+    <canvas id="gradientCanvas"></canvas>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-badge animate-on-scroll">
+                <span class="badge-dot"></span>
+                Restaurant Management System
+            </div>
+            <h1 class="hero-title animate-on-scroll">
+                Streamline Your <span class="gradient-text">Restaurant Operations</span>
+            </h1>
+            <p class="hero-subtitle animate-on-scroll">
+                Servio is a modern, real-time ordering management platform that connects
+                every part of your restaurant — from table to kitchen to checkout — in one seamless experience.
+            </p>
+            <div class="hero-actions animate-on-scroll">
+                <a href="#features" class="btn btn-primary">Explore Features</a>
+                <a href="#tech" class="btn btn-secondary">View Tech Stack</a>
+            </div>
+            <div class="hero-stats animate-on-scroll">
+                <div class="stat">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">User Roles</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">Real-Time</span>
+                    <span class="stat-label">WebSocket Updates</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Responsive</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Features</span>
+                <h2 class="section-title">Everything You Need to <span class="gradient-text">Run Your Restaurant</span>
+                </h2>
+                <p class="section-desc">From order-taking to inventory management, Servio covers every aspect of your
+                    restaurant operations.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Real-Time Updates</h3>
+                    <p>WebSocket-powered live updates ensure all staff see order changes instantly — no page refreshes
+                        needed.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Smart Order Management</h3>
+                    <p>Take orders from tables, send them to the kitchen or bar, and track every order through its
+                        lifecycle.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Inventory Tracking</h3>
+                    <p>Monitor stock levels in real time. Automatic ingredient deduction when orders are placed and
+                        alerts for low stock.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path
+                                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Menu Management</h3>
+                    <p>Create and manage menu items with categories, pricing, and ingredient associations — all from an
+                        intuitive admin panel.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Role-Based Access</h3>
+                    <p>Secure authentication with role-specific views and permissions for Admin, Waiter, Kitchen, Bar,
+                        and Cashier.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Mobile-First Design</h3>
+                    <p>Fully responsive interface optimized for tablets and phones — perfect for waitstaff taking orders
+                        at the table.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roles Section -->
+    <section class="section section-alt" id="roles">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Roles</span>
+                <h2 class="section-title">Designed for <span class="gradient-text">Every Team Member</span></h2>
+                <p class="section-desc">Each role gets a tailored interface that shows exactly what they need — nothing
+                    more, nothing less.</p>
+            </div>
+            <div class="roles-grid">
+                <div class="role-card animate-on-scroll">
+                    <div class="role-number">01</div>
+                    <h3>Admin</h3>
+                    <p>Full control over the system — manage menus, inventory, users, and monitor all restaurant
+                        operations from a central dashboard.</p>
+                    <ul class="role-features">
+                        <li>Menu & Inventory Management</li>
+                        <li>User & Role Management</li>
+                        <li>System-wide Dashboard</li>
+                    </ul>
+                </div>
+                <div class="role-card animate-on-scroll">
+                    <div class="role-number">02</div>
+                    <h3>Waiter</h3>
+                    <p>Take orders from tables with a sleek mobile interface, add items, and send orders directly to the
+                        kitchen or bar.</p>
+                    <ul class="role-features">
+                        <li>Table-Based Ordering</li>
+                        <li>Real-time Order Status</li>
+                        <li>Quick Item Search</li>
+                    </ul>
+                </div>
+                <div class="role-card animate-on-scroll">
+                    <div class="role-number">03</div>
+                    <h3>Kitchen</h3>
+                    <p>View incoming food orders in real-time, mark items as preparing or ready, and keep the service
+                        flowing smoothly.</p>
+                    <ul class="role-features">
+                        <li>Live Order Queue</li>
+                        <li>Status Updates</li>
+                        <li>Priority Management</li>
+                    </ul>
+                </div>
+                <div class="role-card animate-on-scroll">
+                    <div class="role-number">04</div>
+                    <h3>Bar</h3>
+                    <p>Dedicated view for beverage orders. See only drink-related items and manage the bar workflow
+                        independently.</p>
+                    <ul class="role-features">
+                        <li>Drink-Only Orders</li>
+                        <li>Separate Workflow</li>
+                        <li>Quick Status Toggle</li>
+                    </ul>
+                </div>
+                <div class="role-card animate-on-scroll">
+                    <div class="role-number">05</div>
+                    <h3>Cashier</h3>
+                    <p>Handle payments, view order totals, and close out tables. Complete financial overview for every
+                        order.</p>
+                    <ul class="role-features">
+                        <li>Order Summaries</li>
+                        <li>Payment Processing</li>
+                        <li>Receipt Generation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="section" id="tech">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Tech Stack</span>
+                <h2 class="section-title">Built with <span class="gradient-text">Modern Technologies</span></h2>
+                <p class="section-desc">Servio is powered by a robust and scalable technology stack designed for
+                    performance and reliability.</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card animate-on-scroll">
+                    <div class="tech-category">Frontend</div>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-name">React</span>
+                            <span class="tech-detail">UI Library</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">TypeScript</span>
+                            <span class="tech-detail">Type Safety</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Tailwind CSS</span>
+                            <span class="tech-detail">Styling</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Vite</span>
+                            <span class="tech-detail">Build Tool</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-card animate-on-scroll">
+                    <div class="tech-category">Backend</div>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-name">Node.js</span>
+                            <span class="tech-detail">Runtime</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Express</span>
+                            <span class="tech-detail">API Framework</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">MongoDB</span>
+                            <span class="tech-detail">Database</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Socket.IO</span>
+                            <span class="tech-detail">Real-Time</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-card animate-on-scroll">
+                    <div class="tech-category">DevOps</div>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <span class="tech-name">Docker</span>
+                            <span class="tech-detail">Containerization</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">Railway</span>
+                            <span class="tech-detail">Deployment</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">JWT</span>
+                            <span class="tech-detail">Authentication</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-name">REST API</span>
+                            <span class="tech-detail">Architecture</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section class="section section-alt" id="workflow">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Workflow</span>
+                <h2 class="section-title">How Servio <span class="gradient-text">Works</span></h2>
+                <p class="section-desc">A seamless flow from customer order to payment, with every role connected in
+                    real-time.</p>
+            </div>
+            <div class="workflow-timeline">
+                <div class="workflow-step animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Customer Orders</h3>
+                        <p>Waiter takes the order at the table using the mobile-friendly interface. Items are selected
+                            from the menu with a few taps.</p>
+                    </div>
+                </div>
+                <div class="workflow-step animate-on-scroll">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Smart Routing</h3>
+                        <p>Food items are automatically sent to the Kitchen display, while drinks are routed to the Bar
+                            — no manual sorting needed.</p>
+                    </div>
+                </div>
+                <div class="workflow-step animate-on-scroll">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Preparation</h3>
+                        <p>Kitchen and Bar staff see live order queues. They update statuses as items are being prepared
+                            and marked as ready.</p>
+                    </div>
+                </div>
+                <div class="workflow-step animate-on-scroll">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Delivery & Payment</h3>
+                        <p>Waiters are notified when orders are ready. Cashier handles the checkout with a complete
+                            order summary and total.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
+                <p class="section-desc">Have questions about Servio? Want to request a demo or need support? We'd love
+                    to hear from you.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-form-card animate-on-scroll">
+                    <h3>Send us a message</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Name</label>
+                                <input type="text" id="contactName" placeholder="Your name" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPhone">Phone</label>
+                                <input type="tel" id="contactPhone" placeholder="+994 (50) 123-4567" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" placeholder="How can we help?" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" rows="5" placeholder="Tell us more..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary contact-submit">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info animate-on-scroll">
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:support@servio.app">support@servio.app</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+994501234567">+994 (50) 123-4567</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p><a href="https://maps.google.com/?q=Baku,Azerbaijan" target="_blank" rel="noopener">Baku,
+                                    Azerbaijan</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Mon – Fri, 9:00 – 18:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <img src="../frontend/public/servio.png" alt="Servio" draggable="false" class="footer-logo" />
+                    <p>Modern restaurant ordering and management system. Built with love and modern tech.</p>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Servio. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
