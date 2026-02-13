@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: servio
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: cd build && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
