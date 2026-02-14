@@ -734,7 +734,7 @@ img {
 }
 
 .contact-submit {
-    align-self: flex-start;
+    width: 100%;
     padding: 14px 40px;
 }
 
