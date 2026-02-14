@@ -42,7 +42,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
 }
 
 body {
@@ -239,7 +238,7 @@ img {
 }
 
 .hero-title {
-    font-size: clamp(40px, 7vw, 72px);
+    font-size: clamp(36px, 6vw, 60px);
     font-weight: 800;
     color: var(--surface-50);
     line-height: 1.1;
@@ -487,7 +486,7 @@ img {
 .role-number {
     font-size: 48px;
     font-weight: 900;
-    color: rgba(238, 122, 18, 0.08);
+    color: hsla(28, 87%, 50%, 0.50);
     line-height: 1;
     margin-bottom: 12px;
 }
@@ -799,6 +798,47 @@ img {
 .contact-info-card p a:hover {
     color: var(--brand-400);
     text-decoration: underline;
+}
+
+/* ========================================
+   Scroll to Top Button
+   ======================================== */
+.scroll-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    border: none;
+    background: linear-gradient(135deg, var(--brand-500), var(--brand-700));
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    transition: all 0.3s ease;
+    z-index: 90;
+    box-shadow: 0 4px 20px rgba(238, 122, 18, 0.3);
+}
+
+.scroll-top svg {
+    width: 20px;
+    height: 20px;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(238, 122, 18, 0.45);
 }
 
 /* ========================================

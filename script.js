@@ -63,17 +63,29 @@ document.addEventListener('DOMContentLoaded', () => {
     drawOrbs();
 
 
-    // ---- Scroll-based nav styling ----
+    // ---- Scroll-based nav styling + scroll-to-top ----
     const nav = document.getElementById('nav');
+    const scrollTopBtn = document.getElementById('scrollTop');
+
     const handleScroll = () => {
         if (window.scrollY > 40) {
             nav.classList.add('scrolled');
         } else {
             nav.classList.remove('scrolled');
         }
+        // Show/hide scroll-to-top button
+        if (window.scrollY > 400) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
     // ---- Mobile nav toggle ----
     const toggle = document.getElementById('navToggle');
@@ -121,9 +133,31 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+            if (href === '#') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+            const target = document.querySelector(href);
             if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
+                // Find the section header content inside so we skip the section padding
+                const header = target.querySelector('.section-header') || target.querySelector('.section-tag');
+                const scrollTarget = header || target;
+                // Use offsetTop (not getBoundingClientRect) to ignore CSS transforms from animations
+                let top = 0;
+                let el = scrollTarget;
+                while (el) {
+                    top += el.offsetTop;
+                    el = el.offsetParent;
+                }
+                const wasScrolled = nav.classList.contains('scrolled');
+                nav.classList.add('scrolled');
+                const navHeight = nav.offsetHeight;
+                if (!wasScrolled) nav.classList.remove('scrolled');
+                window.scrollTo({
+                    top: top - navHeight - 24,
+                    behavior: 'smooth'
+                });
             }
         });
     });
